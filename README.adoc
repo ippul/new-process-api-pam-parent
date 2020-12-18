@@ -1,0 +1,119 @@
+## new-process-api-pam
+
+### Configurations needed to run the scenario
+
+#### Users
+[options="header"]
+|===
+|username           |password   |roles
+|rhpamAdmin         |Pa$$w0rd   |admin,kie-server,rest-all
+|rhpamdeveloper     |Pa$$w0rd   |developer,kie-server,rest-all
+|application-user   |Pa$$w0rd   |a-business-role,kie-server
+|===
+#### System properties
+```
+...
+<system-property name="org.kie.server.bypass.auth.user" value="false" />
+...
+```
+#### kie-server
+Update the kie server URL in xref:new-process-api-test/src/test/java/com/redhat/example/NewAPISteps.java[NewAPISteps.java]
+
+#### run the tests
+```
+$ mvn clean install
+```
+
+#### Cucumber report
+Test result are available in 'new-process-api-test/target/cucumber-reports.html'
+
+#### Test scenario details
+
+The BDD scenario used for the test: xref:new-process-api-test/src/test/resources/new-api-test-case-scenarios.feature[new-api-test-case-scenarios.feature]
+
+.Test scenarios details
+[options="header"]
+|===
+|id |process-definition-id |ht assignment actor |ht assignment group  |query client user id    |expected tasks |Test result
+
+|1
+|com.redhat.example.process-test-case-1
+|null
+|a-business-role
+|rhpamdeveloper
+|0
+|FAILED
+
+|2
+|com.redhat.example.process-test-case-1
+|null
+|a-business-role
+|application-user
+|1
+|PASSED
+
+|3
+|com.redhat.example.process-test-case-2
+|application-user
+|null
+|rhpamdeveloper
+|0
+|FAILED
+
+|4
+|com.redhat.example.process-test-case-2
+|application-user
+|null
+|application-user
+|1
+|PASSED
+
+|5
+|com.redhat.example.process-test-case-3
+|application-user
+|a-business-role
+|rhpamdeveloper
+|0
+|FAILED
+
+|6
+|com.redhat.example.process-test-case-3
+|application-user
+|a-business-role
+|application-user
+|1
+|PASSED
+
+|7
+|com.redhat.example.process-test-case-4
+|null
+|kie-server
+|rhpamdeveloper
+|1
+|PASSED
+
+|8
+|com.redhat.example.process-test-case-4
+|null
+|kie-server
+|application-user
+|1
+|PASSED
+
+|9
+|com.redhat.example.process-test-case-5
+|application-user
+|kie-server
+|rhpamdeveloper
+|0
+|FAILED
+
+|10
+|com.redhat.example.process-test-case-5
+|application-user
+|kie-server
+|application-user
+|1
+|PASSED
+
+|===

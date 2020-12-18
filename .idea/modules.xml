@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/new-process-api-pam-parent.iml" filepath="$PROJECT_DIR$/new-process-api-pam-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/new-process-api-test/new-process-api-test.iml" filepath="$PROJECT_DIR$/new-process-api-test/new-process-api-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-new-api-kjar/test-new-api-kjar.iml" filepath="$PROJECT_DIR$/test-new-api-kjar/test-new-api-kjar.iml" />
+    </modules>
+  </component>
+</project>
