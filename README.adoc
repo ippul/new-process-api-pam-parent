@@ -105,8 +105,8 @@ The BDD scenario used for the test: xref:new-process-api-test/src/test/resources
 |application-user
 |kie-server
 |rhpamdeveloper
-|0
-|FAILED
+|1
+|PASSED
 
 |10
 |com.redhat.example.process-test-case-5

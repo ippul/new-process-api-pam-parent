@@ -17,5 +17,5 @@ Feature: New Process query API query potential owner test
       | test-new-api.process-test-case-3  |  application-user   |1                       |
       | test-new-api.process-test-case-4  |  rhpamdeveloper     |1                       |
       | test-new-api.process-test-case-4  |  application-user   |1                       |
-      | test-new-api.process-test-case-5  |  rhpamdeveloper     |0                       |
+      | test-new-api.process-test-case-5  |  rhpamdeveloper     |1                       |
       | test-new-api.process-test-case-5  |  application-user   |1                       |
